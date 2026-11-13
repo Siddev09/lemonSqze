@@ -1,0 +1,32 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jello: understand the codebase before you audit it | 0xLemon</title><meta name="description" content="Jello is a single-agent Claude skill that builds an understanding map of a smart contract codebase before review."><meta name="theme-color" content="#0d1210">
+<meta property="og:title" content="Jello: understand the codebase before you audit it"><meta property="og:description" content="A Claude skill that maps roles, flows, invariants, math and integrations before you start hunting."><meta property="og:type" content="website"><meta property="og:image" content="assets/banner.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@SP_SIDDHARTH_">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css"></head><body>
+<header><div class="wrap"><a class="logo" href="index.html">lemon.sec</a><nav><a href="index.html">Portfolio</a><a href="blog.html">Blog</a><a href="milestones.html">AI milestones</a><a href="checklist.html">Checklist</a><a href="jello-skill.html" aria-current="page">Jello AI</a></nav></div></header>
+<main class="wrap"><div class="wide">
+<section class="hero" style="padding-bottom:8px"><div><h1 style="font-size:clamp(56px,10vw,110px)">Jello</h1><p class="handle">A Claude skill for smart contract review</p>
+<p class="bio">Reads your contracts and docs, then builds an understanding map: roles, user flows, invariants, math and integration surfaces. It gets you oriented before you start hunting. No findings, no severity, no exploit claims.</p>
+<a class="btn main" href="https://github.com/Siddev09/Jello.Skill">View on GitHub</a><a class="btn" href="#passes">See the passes</a></div>
+<div class="tally"><h3>How you use it</h3><p style="margin:0 0 10px">Attach your contracts, then say a trigger:</p><pre style="margin:0;background:var(--bg);border:1px solid var(--line);padding:14px;border-radius:6px;overflow-x:auto"><code>run the math pass on these
+docs pass
+periphery check
+jello rage</code></pre></div></section>
+<h2>What it solves</h2>
+<p style="color:#c7d3c9;max-width:66ch">Most AI review tools jump straight to flagging issues. That floods you with false positives and quietly narrows your thinking to whatever the tool already flagged, instead of the full range of attack vectors the codebase has.</p>
+<p style="color:#c7d3c9;max-width:66ch">Jello builds understanding first. You form your own mental model of the protocol and write your own attack scenarios, so review time goes into judgment, not orientation.</p>
+<h2 id="passes">The four passes</h2><p>Each pass runs on its own. Say its trigger and you get that pass only.</p>
+<ul class="passes"><li><strong>Docs deep dive</strong><span><code class="trig">docs pass</code></span><span>Per-contract roles, protocol summary, user flows, known issues from the docs, and consolidated invariants.</span></li><li><strong>Periphery and Uniswap crawl</strong><span><code class="trig">periphery check</code></span><span>What router, hook and pool-manager surfaces call, expect back and fire on.</span></li><li><strong>Integrator crawl</strong><span><code class="trig">integrator check</code></span><span>How external contracts connect to the base contract: entry points, approvals and callbacks.</span></li><li><strong>Math pass</strong><span><code class="trig">math pass</code></span><span>Three-phase extraction, dedupe, then one consolidated model of invariants, encoding and constraints.</span></li><li><strong>Full run</strong><span><code class="trig">curious jello or run jello</code></span><span>All four passes, in order.</span></li></ul>
+<h2>Modes</h2><p>Choose how much Jello relies on your docs.</p>
+<div class="two"><div><strong>strict</strong><p>Checks invariants against the docs you supply, and asks for them if they are missing.</p></div><div><strong>relaxed</strong><p>Infers everything from the code alone.</p></div></div>
+<p style="color:var(--muted);margin-top:14px;max-width:66ch">Modes apply to the docs deep dive and full runs. The math pass and the crawls read docs when they are available, without asking.</p>
+<section class="rage"><h2>Rage mode</h2>
+<p style="max-width:66ch"><code class="trig">jello rage</code> is a separate, opt-in trigger that flips the default. Instead of building understanding, it runs an attacker-mindset pattern match against a 14-category audit checklist. The categories include access control, reentrancy, oracle manipulation, math, DoS, governance and front-running, plus ERC-3643, ERC-4626, ERC-7518 and Uniswap V4 hooks.</p>
+<p style="max-width:66ch">Every lead is proof-gated. It is reported only after the exact code path, function and trigger condition are traced and confirmed. An unproven suspicion gets one summary line, and anything less is left out.</p>
+<p style="max-width:66ch">Use it as a starting point, never a substitute for your own review. This is the one place the "no findings" rule is suspended, and the exception never carries into a normal run.</p></section>
+<h2>Knowing which run you got</h2>
+<p style="color:#c7d3c9;max-width:66ch">Every response opens with <code>SCOPE:</code> and <code>MODE:</code> lines, so you can see which pass ran and how. Automatic matching also works when your request clearly describes the task.</p>
+<p style="margin-top:32px"><a class="btn main" href="https://github.com/Siddev09/Jello.Skill">Get Jello on GitHub</a></p></div></main>
+<footer><div class="wrap"><span>0xLemon 2026</span><span><a href="https://x.com/SP_SIDDHARTH_">@SP_SIDDHARTH_ on X</a> · <a href="https://github.com/Siddev09">GitHub</a></span></div></footer>
+<script src="assets/app.js"></script></body></html>
