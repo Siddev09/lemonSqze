@@ -153,3 +153,13 @@ body{background:radial-gradient(ellipse 70% 420px at 50% 0,rgba(243,213,49,.08),
 .grp{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin:34px 0 12px;padding:10px 14px;background:rgba(243,213,49,.05);border:1px solid var(--line);border-left:3px solid var(--lemon);border-radius:4px}
 .grp h3{margin:0;font-size:18px;letter-spacing:-.01em}.grp span{color:var(--muted);font-size:14px}
 .grp+.ledger{margin-bottom:0}
+
+
+/* global rank feature */
+.gr{display:flex;align-items:center;gap:36px;margin:0 0 18px;padding:26px 32px;border:1.5px solid var(--lemon);border-radius:8px;background:linear-gradient(120deg,rgba(243,213,49,.16),rgba(243,213,49,.03) 65%),#0b100d;box-shadow:0 0 0 5px rgba(243,213,49,.06),0 12px 44px rgba(243,213,49,.10)}
+.gn{display:flex;flex-direction:column;gap:4px}
+.gl{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--lemon)}
+.gn strong{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:clamp(56px,9vw,92px);line-height:1;letter-spacing:-.04em;color:var(--lemon)}
+.gt{border-left:1px solid rgba(243,213,49,.3);padding-left:32px}
+.gt b{display:block;font-size:22px;margin-bottom:4px}.gt span{color:#c7d3c9;font-size:17px;max-width:44ch;display:block}
+@media(max-width:700px){.gr{flex-direction:column;align-items:flex-start;gap:16px;padding:22px}.gt{border-left:0;border-top:1px solid rgba(243,213,49,.3);padding:16px 0 0}}
