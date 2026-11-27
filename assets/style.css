@@ -163,3 +163,7 @@ body{background:radial-gradient(ellipse 70% 420px at 50% 0,rgba(243,213,49,.08),
 .gt{border-left:1px solid rgba(243,213,49,.3);padding-left:32px}
 .gt b{display:block;font-size:22px;margin-bottom:4px}.gt span{color:#c7d3c9;font-size:17px;max-width:44ch;display:block}
 @media(max-width:700px){.gr{flex-direction:column;align-items:flex-start;gap:16px;padding:22px}.gt{border-left:0;border-top:1px solid rgba(243,213,49,.3);padding:16px 0 0}}
+
+
+/* info severity */
+:root{--info:#7aa2f7}.row .i{color:var(--info)}
